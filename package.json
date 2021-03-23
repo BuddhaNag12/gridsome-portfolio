@@ -1,0 +1,18 @@
+{
+  "name": "buddha-portfolio",
+  "private": true,
+  "scripts": {
+    "develop": "gridsome develop",
+    "explore": "gridsome explore",
+    "build": "gridsome build"
+  },
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "autoprefixer": "9",
+    "gridsome": "^0.7.0",
+    "gsap": "^3.6.0",
+    "postcss": "7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  },
+  "devDependencies": {}
+}
