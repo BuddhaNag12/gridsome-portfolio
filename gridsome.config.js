@@ -12,7 +12,7 @@ const postcssPlugins = [
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
-  siteName: 'Portfolio',
+  siteName: 'Buddha Nag | Personal Portfolio',
   plugins: [],
   css: {
       loaderOptions: {

@@ -1,24 +1,25 @@
-const colors = require('tailwindcss/colors')
+// const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: [],
+  purge: false,
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       zIndex: {
-        '-1': '-1',
-        '-2': '-2',
-        '-3': '-3',
-
-       },
+        "-1": "-1",
+        "-2": "-2",
+        "-3": "-3",
+      },
       colors: {
-        primary:{
-          light:'#3D4057',
-          dark:'#11152b'
+        primary: {
+          light: "#3D4057",
+          dark: "#11152b",
+          dimmed: "#04e8b9",
         },
-        accent:{
-          light:'#00CECD',
-          dark:'#0EE6B7',
+        accent: {
+          light: "#00CECD",
+          dark: "#0EE6B7",
+          code: "#e68fff",
         },
 
         "primary-text-color": "#08e7b9",
@@ -29,9 +30,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {
-     
-    },
+    extend: {},
   },
   plugins: [],
 };

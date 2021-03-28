@@ -1,59 +1,112 @@
 <template>
-  <header class="bg-primary-dark h-16 border-custom  z-10 w-full">
-    <nav class="flex flex-column justify-center">
-      <div class="hidden lg:block md:block">
-        <div
-          class="grid grid-cols-12 gap-4 h-16 items-center uppercase text-sm"
+  <nav
+    class="header fixed flex flex-wrap items-center justify-between px-2 py-3 border-custom mb-3 w-full z-10"
+  >
+    <div
+      class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+    >
+      <div
+        class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
+      >
+        <a
+          class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
         >
-          <g-link class="nav__link col-start-5" to="/">Home</g-link>
-          <g-link class="nav__link" to="/about">About</g-link>
-          <g-link class="nav__link" to="/works">Works</g-link>
-          <g-link class="nav__link" to="/contact">Contact</g-link>
-          <!-- <a class="nav__link col-start-5" href="#top">Home</a>
-          <a class="nav__link" href="#middle">About</a>
-          <a class="nav__link" href="#second-mid">Works</a>
-          <a class="nav__link" href="#contact">Contact</a> -->
-        </div>
-      </div>
+          <g-image src="~/favicon.png" width="50" height="20" immediate quality="100" />
+        </a>
 
-      <div class="ml-auto pr-2 pt-2 lg:hidden md:hidden">
         <button
-          class="btn font-bold py-2 px-4"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-          @click="isOpen = !isOpen"
+          class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          type="button"
+          v-on:click="showMenu = !showMenu"
         >
-          <span class="material-icons text-white"> menu </span>
+          <div v-if="showMenu">
+            <span class="material-icons text-white">
+              close
+            </span>
+          </div>
+          <div v-else>
+            <span class="material-icons text-white"> menu </span>
+          </div>
         </button>
       </div>
-      <div class="absolute" v-if="isOpen">
-        <h1 class="text-white">Dashboard</h1>
+
+      <div
+        v-bind:class="{ hidden: !showMenu, flex: showMenu }"
+        class="lg:flex lg:flex-grow lg:justify-center "
+      >
+        <ul class="flex flex-col lg:flex-row list-none">
+          <li class="nav-item">
+            <a
+              :class="this.currentSection == '#top' ? 'active' : ''"
+              @click="scrollToId()"
+              class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
+            >
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              :class="this.currentSection == '#journey' ? 'active' : ''"
+              @click="scrollToId('#journey')"
+              class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
+            >
+              <span>About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              :class="this.currentSection == '#projects' ? 'active' : ''"
+              @click="scrollToId('#projects')"
+              class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
+            >
+              <span>works</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              :class="this.currentSection == '#contact' ? 'active' : ''"
+              @click="scrollToId('#contact')"
+              class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
+            >
+              <span>contact</span>
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 </template>
 
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <script>
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
+
 export default {
   data() {
     return {
-      isOpen: false,
+      showMenu: false,
+      currentSection: "#top",
+      headerTitle: "Buddha",
+
     };
+  },
+
+  methods: {
+    scrollToId(id) {
+      gsap.to(window, { duration: 1, scrollTo: id?id:0, ease: "power2" });
+      this.currentSection = id?id:'#top';
+    },
+ 
   },
 };
 </script>
 
 <style scoped>
-.active--exact.active {
+.active {
   color: #08e7b9 !important;
 }
 .nav__link {
@@ -62,10 +115,10 @@ export default {
 .border-custom {
   border-bottom: solid 1px #e1e1e1;
 }
-header {
-  position: fixed !important;
+.header {
+  /* position: fixed !important; */
   background-color: rgba(17, 21, 43, 0.9);
-  
   border-bottom-color: #2e355a !important;
 }
+
 </style>

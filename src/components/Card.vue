@@ -1,15 +1,15 @@
 <template>
   <div :class="this.cardUpDown">
     <div class="card w-415 max-w-md h-330 m-4 p-2">
-      <div class="card-header mb-10">
+      <div class="card-header mb-10 pl-5">
         <h1 class="text-primary-text-color text-4xl">{{ this.cardHeader }}</h1>
       </div>
-      <div class="card-subheader mb-5">
+      <div class="card-subheader mb-5 pl-5">
         <h1 class="text-secondary-text-color text-xl capitalize">
           {{ this.cardSubHeader }}
         </h1>
       </div>
-      <div class="card-body">
+      <div class="card-body p-3">
         <p class="text-muted-text-color capitalize">
           {{ this.cardBody }}
         </p>
