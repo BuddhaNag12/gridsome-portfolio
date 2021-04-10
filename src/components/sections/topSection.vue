@@ -5,7 +5,7 @@
     >
       <!-- Start of left top hero image -->
       <div id="img" class="left-img row-start-2 lg:row-start-1 md:row-start-1">
-        <g-image src="~/assets/img3.png" immediate width="450" quality="100" />
+        <g-image src="~/assets/img3.webp" immediate width="450" quality="100" alt="hero-img" />
       </div>
       <!-- End of the hero image -->
       <!-- start of top typography right section -->

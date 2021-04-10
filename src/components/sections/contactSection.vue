@@ -66,7 +66,7 @@
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ml-10 pt-10 justify-items-start lg:justify-items-center"
       >
-        <div class="wrapper text-white text-2xl sm:text-xl mb-16">
+        <div class="wrapper text-white text-2xl sm:text-xl mb-16 z-10">
           <div class="wrap lg:w-60 grid grid-flow-row gap-3">
             <a
               href="https://www.linkedin.com/in/buddha-nag-391880192/"
@@ -85,14 +85,14 @@
               <i class="fa fa-facebook-f pr-2"></i>facebook/buddha-nag</a
             >
             <a
-              href="https://www.instagram.com/b_u_d_d_h_a_n_a_g/"
+              href="https://www.instagram.com/buddha_nag/"
               target="_blank"
               rel="noopener noreferrer"
               ><i class="fa fa-instagram pr-2"></i>instagram/buddha-nag</a
             >
           </div>
         </div>
-        <div class="wrapper text-white text-2xl sm:text-xl">
+        <div class="wrapper text-white text-2xl sm:text-xl z-50">
           <div class="wrap lg:w-60 grid grid-flow-row gap-3">
             <a
               href="https://www.linkedin.com/in/buddha-nag-391880192/"
@@ -121,7 +121,7 @@
             >
           </div>
         </div>
-        <div class="wrapper text-white text-2xl sm:text-xl mt-10 lg:mt-0">
+        <div class="wrapper text-white text-2xl sm:text-xl mt-10 lg:mt-0 z-50">
           <div class="wrap w-auto grid grid-flow-row gap-3">
             <h1 class="text-accent-dark text-lg">Start a project or collaborate?</h1>
             <a
@@ -158,11 +158,11 @@
               </div>
                 <div class="flex flex-col justify-between">
                 <a
-                  href="http://typejs.org/"
+                  href="https://mattboldt.com/demos/typed-js/"
                   target="_blank"
                   class="text-xs"
                   rel="noopener noreferrer"
-                  >typejs.org</a
+                  >typedjs</a
                 >
                 <a
                   href="https://tailwindcss.com/"
@@ -183,7 +183,7 @@
                   target="_blank"
                   class="text-xs"
                   rel="noopener noreferrer"
-                  >gridsome{jamstack}</a
+                  >{jamstack}</a
                 >
               </div>
             </div>

@@ -1,28 +1,30 @@
 <template>
   <nav
-    class="header fixed flex flex-wrap items-center justify-between px-2 py-3 border-custom mb-3 w-full z-10"
+    class="header fixed flex flex-wrap items-center justify-between px-2 py-3 border-custom mb-3 w-full z-20"
   >
-    <div
-      class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-    >
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div
         class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
       >
         <a
           class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
         >
-          <g-image src="~/favicon.png" width="50" height="20" immediate quality="100" />
+          <g-image
+            src="~/favicon.png"
+            width="50"
+            height="20"
+            alt="buddhanag-logo"
+            quality="100"
+          />
         </a>
 
         <button
-          class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          class="text-white cursor-pointer text-xl leading-none ml-10 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
           type="button"
           v-on:click="showMenu = !showMenu"
         >
           <div v-if="showMenu">
-            <span class="material-icons text-white">
-              close
-            </span>
+            <span class="material-icons text-white"> close </span>
           </div>
           <div v-else>
             <span class="material-icons text-white"> menu </span>
@@ -32,7 +34,7 @@
 
       <div
         v-bind:class="{ hidden: !showMenu, flex: showMenu }"
-        class="lg:flex lg:flex-grow lg:justify-center "
+        class="lg:flex lg:flex-grow lg:justify-center"
       >
         <ul class="flex flex-col lg:flex-row list-none">
           <li class="nav-item">
@@ -91,16 +93,14 @@ export default {
       showMenu: false,
       currentSection: "#top",
       headerTitle: "Buddha",
-
     };
   },
 
   methods: {
     scrollToId(id) {
-      gsap.to(window, { duration: 1, scrollTo: id?id:0, ease: "power2" });
-      this.currentSection = id?id:'#top';
+      gsap.to(window, { duration: 1, scrollTo: id ? id : 0, ease: "power2" });
+      this.currentSection = id ? id : "#top";
     },
- 
   },
 };
 </script>
@@ -120,5 +120,4 @@ export default {
   background-color: rgba(17, 21, 43, 0.9);
   border-bottom-color: #2e355a !important;
 }
-
 </style>

@@ -1,6 +1,20 @@
 <template>
   <div>
     <section id="projects">
+      <transition name="scale">
+        <div
+          class="imgView fixed left-0 top-0 w-full ease-in-out overflow-x-hidden h-full z-50"
+          v-if="showImg"
+        >
+          <span
+            class="material-icons w-6 hover:bg-red-900 hover:text-blue-50 transition-all h-auto text-center bg-white cursor-pointer absolute z-50 right-5 text-red-700 rounded-xl top-2"
+            @click="showImg = false"
+            >close</span
+          >
+          <img :src="`${getImage}`" class="w-full h-full bg-cover" />
+        </div>
+      </transition>
+
       <div class="h-auto">
         <div class="container w-full lg:pt-10 lg:pl-10">
           <div class="text-area lg:ml-10 lg:mb-20 m-4 w-auto lg:w-3/6">
@@ -26,10 +40,11 @@
             class="img grid grid-cols-1 lg:grid-col-2 md:grid-cols-2 gap-2 items-center"
           >
             <g-image
-              src="~/assets/Inscan.png"
-              immediate
+              id="project-img"
+              @click="toggleImgView('Inscan.webp')"
+              src="~/assets/Inscan.webp"
               quality="100"
-              class="rounded-2xl w-auto lg:ml-10"
+              class="rounded-2xl w-auto lg:ml-10 cursor-pointer"
             />
             <div class="right-side pl-2 lg:m-10">
               <h1 class="text-primary-text-color text-4xl lg:text-5xl">
@@ -59,10 +74,10 @@
           >
             <div class="img lg:w-6/12 md:w-6/12 w-auto">
               <g-image
-                src="~/assets/movies.png"
-                immediate
+                @click="toggleImgView('movies.webp')"
+                src="~/assets/movies.webp"
                 quality="100"
-                class="rounded-2xl"
+                class="rounded-2xl cursor-pointer"
               />
             </div>
             <div class="right-side p-4 lg:ml-10">
@@ -92,10 +107,10 @@
             class="img grid grid-cols-1 lg:grid-col-2 md:grid-cols-2 gap-4 items-center"
           >
             <g-image
-              src="~/assets/ecom.png"
-              immediate
+              @click="toggleImgView('ecom.webp')"
+              src="~/assets/ecom.webp"
               quality="100"
-              class="rounded-2xl w-auto lg:ml-10"
+              class="rounded-2xl w-auto lg:ml-10 cursor-pointer"
             />
             <div class="right-side pl-2 lg:m-10">
               <h1
@@ -130,13 +145,29 @@
 <script>
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+  data: () => ({
+    showImg: false,
+    imgName: "",
+  }),
+
   mounted() {
     this.animateProject();
   },
+  computed: {
+    getImage() {
+      return this.imgName;
+    },
+  },
+
   methods: {
+    toggleImgView(name) {
+      this.imgName = name;
+      this.showImg = true;
+    },
     animateProject() {
       gsap.from("#project-img1", {
         x: -100,
@@ -146,7 +177,7 @@ export default {
           scrub: true,
           trigger: "#project-img1",
           // markers: true,
-          start: "top bottom",
+          start: "top 70%",
           end: "5px",
           // toggleActions: "restart pause resume pause",
         },
@@ -171,8 +202,8 @@ export default {
         scrollTrigger: {
           scrub: true,
           trigger: "#project-img3",
-          // start: "top 100%",
-          // end: "10px",
+          start: "top 80%",
+          end: "10px",
           // markers: true,
           // toggleActions: "restart pause resume pause",
         },
@@ -185,5 +216,29 @@ export default {
 <style scoped>
 div > a:hover #arrow {
   border-color: #73d9ff;
+}
+
+.scale-enter-active {
+  animation: slide-in 400ms reverse ease-in;
+}
+.scale-leave-active {
+  animation: slide-in 400ms ease-out;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateY(0px);
+  }
+  /* 25% {
+    transform: translateY(2deg);
+  }
+  50% {
+    transform: translateY(-5deg);
+  }
+  75% {
+    transform: translateY(0deg);
+  } */
+  100% {
+    transform: translateY(100%);
+  }
 }
 </style>

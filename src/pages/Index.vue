@@ -31,8 +31,6 @@ import projectSection from "../components/sections/projectSection";
 import contributionSection from "../components/sections/contributionSection";
 import contactSection from "../components/sections/contactSection";
 
-
-
 export default {
   components: {
     topSection,
