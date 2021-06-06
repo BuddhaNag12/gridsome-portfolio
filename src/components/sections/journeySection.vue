@@ -1,5 +1,5 @@
 <template>
-  <section id="journey">
+  <section id="journey" class="box-border">
     <div class="h-auto mb-20 mt-20">
       <div class="container lg:pl-10 lg:pt-5">
         <div class="text-area lg:ml-10 m-4 mb-20 lg:w-2/4">
@@ -28,7 +28,15 @@
         </div>
       </div>
       <div
-        class="grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center text-white"
+        class="
+          grid grid-col-1
+          md:grid-cols-3
+          lg:grid-cols-4
+          justify-items-center
+          text-white
+          lg:m-6
+          lg:p-5
+        "
       >
         <Card
           id="card"
@@ -106,7 +114,6 @@ export default {
         duration: 1,
         scrollTrigger: {
           trigger: "#midWord",
-          toggleActions: "restart pause resume pause",
         },
       });
       gsap.from("#midWord-2", {
@@ -115,7 +122,6 @@ export default {
         duration: 1,
         scrollTrigger: {
           trigger: "#midWord-2",
-          toggleActions: "restart pause resume pause",
         },
       });
     },
@@ -123,8 +129,8 @@ export default {
       gsap.from("#card", {
         scrollTrigger: {
           trigger: "#card",
-          start: "-10px 100%",
-          end: "100px",
+          start: "top 100%",
+          end: "50px",
           // markers: true,
           toggleActions: "restart pause reverse none",
           scrub: true,
@@ -141,7 +147,6 @@ export default {
         duration: 0.5,
       });
     },
-
   },
 };
 </script>

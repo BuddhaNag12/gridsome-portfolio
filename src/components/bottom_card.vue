@@ -21,9 +21,9 @@
                 >
               </li>
             </div>
-            <div class="flex flex-col">
+            <!-- <div class="flex flex-col">
               <li>{{ edge.node.stars }}</li>
-            </div>
+            </div> -->
           </div>
         </ul>
       </div>

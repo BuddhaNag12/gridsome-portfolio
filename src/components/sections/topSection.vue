@@ -1,11 +1,20 @@
 <template>
-  <section id="top" class="h-auto">
+  <section id="top" class="h-auto box-border">
+    <div class="absolute top-5 z-0 hidden lg:block" id="line">
+      <g-image src="~/assets/line1.png" />
+    </div>
     <div
-      class="grid grid-col-1 md:grid-cols-2 sm:grid-cols-2 gap-1 justify-items-center"
+      class="grid grid-col-1 md:grid-cols-2 sm:grid-cols-2 gap-2 xl:justify-center justify-items-center"
     >
       <!-- Start of left top hero image -->
       <div id="img" class="left-img row-start-2 lg:row-start-1 md:row-start-1">
-        <g-image src="~/assets/img3.webp" immediate width="450" quality="100" alt="hero-img" />
+        <g-image
+          src="~/assets/img3.webp"
+          immediate
+          width="450"
+          quality="100"
+          alt="hero-img"
+        />
       </div>
       <!-- End of the hero image -->
       <!-- start of top typography right section -->
@@ -25,14 +34,14 @@
         <div class="card-section mt-5">
           <div class="TypeCard w-72 h-44 p-4">
             <div class="text-white">
-              <div id="typeText"></div>
+              <span id="typeText"></span>
             </div>
           </div>
         </div>
         <div class="card-section lg:ml-24 mt-4">
           <div class="TypeCard w-72 h-56 p-4">
             <div class="text-white">
-              <div id="typeText-2"></div>
+              <span id="typeText-2"></span>
             </div>
           </div>
         </div>
@@ -45,12 +54,9 @@
 <script>
 import Typed from "typed.js";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 export default {
   mounted() {
     this.animateWords();
-    this.firstType();
   },
   methods: {
     firstType() {
@@ -75,9 +81,8 @@ export default {
           `,
         ],
         onComplete: this.secondType,
-        typeSpeed: 10,
+        typeSpeed: 20,
         backSpeed: 0,
-        startDelay: 4000,
         showCursor: true,
       });
     },
@@ -120,13 +125,17 @@ export default {
       gsap
         .timeline()
         .from("#img", {
-          scrollTrigger: {
-            trigger: "#img",
-            toggleActions: "restart pause resume pause",
-          },
+          // scrollTrigger: {
+          //   trigger: "#img",
+          //   toggleActions: "restart pause resume pause",
+          // },
           x: -200,
           opacity: 0,
           duration: 1.5,
+          onComplete: this.firstType(),
+        })
+        .from("#line", {
+          opacity: 0,
         })
         .from("#heading", {
           y: 100,

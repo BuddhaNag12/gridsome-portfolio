@@ -11,7 +11,11 @@
             @click="showImg = false"
             >close</span
           >
-          <img :src="`${getImage}`" class="w-full h-full bg-cover" />
+          <img
+            loading="lazy"
+            :src="`${getImage}`"
+            class="w-full h-full bg-cover"
+          />
         </div>
       </transition>
 
@@ -37,14 +41,15 @@
         <div class="projects-area grid grid-rows-3 gap-4 p-4">
           <div
             id="project-img1"
-            class="img grid grid-cols-1 lg:grid-col-2 md:grid-cols-2 gap-2 items-center"
+            class="img grid grid-cols-1 lg:grid-col-2 md:grid-cols-2 gap-2 items-center "
           >
             <g-image
               id="project-img"
               @click="toggleImgView('Inscan.webp')"
               src="~/assets/Inscan.webp"
               quality="100"
-              class="rounded-2xl w-auto lg:ml-10 cursor-pointer"
+              
+              class="w-auto lg:ml-10 bg-cover cursor-pointer"
             />
             <div class="right-side pl-2 lg:m-10">
               <h1 class="text-primary-text-color text-4xl lg:text-5xl">
@@ -77,7 +82,7 @@
                 @click="toggleImgView('movies.webp')"
                 src="~/assets/movies.webp"
                 quality="100"
-                class="rounded-2xl cursor-pointer"
+                class="cursor-pointer"
               />
             </div>
             <div class="right-side p-4 lg:ml-10">
@@ -89,7 +94,7 @@
               </h1>
               <div class="lg:mt-5 mb-10 ml-2">
                 <a
-                  href="https://github.com/BuddhaNag12/InScan"
+                  href="https://github.com/BuddhaNag12/Movies-intent-app-flutter"
                   target="_blank"
                   class="btn text-xl lg:text-4xl text-white hover:text-primary-text-color cursor-pointer transition-all delay-75 ease-in-out"
                   >View Work
@@ -110,7 +115,7 @@
               @click="toggleImgView('ecom.webp')"
               src="~/assets/ecom.webp"
               quality="100"
-              class="rounded-2xl w-auto lg:ml-10 cursor-pointer"
+              class="w-auto lg:ml-10 cursor-pointer"
             />
             <div class="right-side pl-2 lg:m-10">
               <h1
@@ -145,7 +150,6 @@
 <script>
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -174,12 +178,12 @@ export default {
         opacity: 0,
         duration: 1,
         scrollTrigger: {
-          scrub: true,
+          // scrub: true,
           trigger: "#project-img1",
           // markers: true,
           start: "top 70%",
-          end: "5px",
-          // toggleActions: "restart pause resume pause",
+          end: "top",
+          // toggleActions: "pause",
         },
       });
       gsap.from("#project-img2", {
@@ -187,7 +191,7 @@ export default {
         opacity: 0,
         duration: 1,
         scrollTrigger: {
-          scrub: true,
+          // scrub: true,
           trigger: "#project-img2",
           start: "top 100%",
           end: "10px",
@@ -200,7 +204,7 @@ export default {
         opacity: 0,
         duration: 1,
         scrollTrigger: {
-          scrub: true,
+          // scrub: true,
           trigger: "#project-img3",
           start: "top 80%",
           end: "10px",
@@ -228,15 +232,6 @@ div > a:hover #arrow {
   0% {
     transform: translateY(0px);
   }
-  /* 25% {
-    transform: translateY(2deg);
-  }
-  50% {
-    transform: translateY(-5deg);
-  }
-  75% {
-    transform: translateY(0deg);
-  } */
   100% {
     transform: translateY(100%);
   }

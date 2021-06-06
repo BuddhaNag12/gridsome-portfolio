@@ -24,7 +24,7 @@
           v-on:click="showMenu = !showMenu"
         >
           <div v-if="showMenu">
-            <span class="material-icons text-white"> close </span>
+            <span class="material-icons text-white" > close </span>
           </div>
           <div v-else>
             <span class="material-icons text-white"> menu </span>
@@ -43,7 +43,7 @@
               @click="scrollToId()"
               class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
             >
-              <span>Home</span>
+              <span title="Section to top">Home</span>
             </a>
           </li>
           <li class="nav-item">
@@ -52,7 +52,7 @@
               @click="scrollToId('#journey')"
               class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
             >
-              <span>About</span>
+              <span title="Section to About">About</span>
             </a>
           </li>
           <li class="nav-item">
@@ -61,7 +61,7 @@
               @click="scrollToId('#projects')"
               class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
             >
-              <span>works</span>
+              <span title="Section to works">works</span>
             </a>
           </li>
           <li class="nav-item">
@@ -70,7 +70,7 @@
               @click="scrollToId('#contact')"
               class="px-3 py-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75 cursor-pointer"
             >
-              <span>contact</span>
+              <span title="Section to contact">contact</span>
             </a>
           </li>
         </ul>
@@ -93,6 +93,7 @@ export default {
       showMenu: false,
       currentSection: "#top",
       headerTitle: "Buddha",
+      message:'appbar'
     };
   },
 
@@ -119,5 +120,20 @@ export default {
   /* position: fixed !important; */
   background-color: rgba(17, 21, 43, 0.9);
   border-bottom-color: #2e355a !important;
+}
+
+.fade-enter-active {
+  animation: slide-in 400ms reverse ease-in;
+}
+.fade-leave-active {
+  animation: slide-in 400ms ease-out;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 </style>

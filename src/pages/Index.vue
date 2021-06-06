@@ -14,7 +14,7 @@
           {{ new Date().getFullYear() }}
         </h1>
         <h1 class="text-muted-text-color capitalize text-xs">
-          Design copyright @Folium
+          Development copyright @buddha
         </h1>
       </div>
     </section>

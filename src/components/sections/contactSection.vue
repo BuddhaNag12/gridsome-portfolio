@@ -78,14 +78,14 @@
               linkedIn/buddha-nag</a
             >
             <a
-              href="https://www.facebook.com/ItSBuddhaHERE/"
+              href="https://www.facebook.com/NagBuddha/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i class="fa fa-facebook-f pr-2"></i>facebook/buddha-nag</a
             >
             <a
-              href="https://www.instagram.com/buddha_nag/"
+              href="https://www.instagram.com/_geek_buddha_/"
               target="_blank"
               rel="noopener noreferrer"
               ><i class="fa fa-instagram pr-2"></i>instagram/buddha-nag</a
@@ -95,7 +95,7 @@
         <div class="wrapper text-white text-2xl sm:text-xl z-50">
           <div class="wrap lg:w-60 grid grid-flow-row gap-3">
             <a
-              href="https://www.linkedin.com/in/buddha-nag-391880192/"
+              href="https://github.com/BuddhaNag12"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -129,7 +129,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              rahaulnag514@gmail.com</a
+              buddha@rivuletdigital.com</a
             >
             <div class="flex flex-row justify-between">
               <div class="flex flex-col justify-between">
