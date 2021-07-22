@@ -125,11 +125,11 @@
           <div class="wrap w-auto grid grid-flow-row gap-3">
             <h1 class="text-accent-dark text-lg">Start a project or collaborate?</h1>
             <a
-              href="mailto:rahulnag514@gmail.com"
+              href="mailto:buddhanag12@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              buddha@rivuletdigital.com</a
+             buddhanag12@gmail.com</a
             >
             <div class="flex flex-row justify-between">
               <div class="flex flex-col justify-between">
