@@ -1,8 +1,13 @@
 // const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: false,
-  darkMode: false, // or 'media' or 'class'
+  // darkMode: false, // or 'media' or 'class'
+  purge: [
+    './src/**/*.vue',
+    './src/**/*.js',
+    './src/**/*.md',
+    './src/**/*.html',
+  ],
   theme: {
     extend: {
       zIndex: {
@@ -28,6 +33,9 @@ module.exports = {
         "bar-color": "#0BA990",
       },
     },
+  },
+  corePlugins: {
+    preflight: false,
   },
   variants: {
     extend: {},

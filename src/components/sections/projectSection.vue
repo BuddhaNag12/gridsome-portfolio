@@ -66,7 +66,7 @@
                   >View Work
                   <span
                     id="arrow"
-                    class="transition-all delay-75 ease-in-out material-icons rounded-full h-8 w-8 shadow-inner border-2 hover:border-secondary-text-color"
+                    class="material-icons rounded-full h-8 w-8 shadow-inner border-2 hover:border-secondary-text-color"
                     >arrow_right_alt</span
                   >
                 </a>

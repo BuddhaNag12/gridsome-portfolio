@@ -3,13 +3,20 @@
 require("~/main.css");
 
 import DefaultLayout from "~/layouts/Default.vue";
-export default function(Vue, { router, head, isClient }) {
+import './assets/tailwind.css'
+export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
+  if (isClient && process.env.NODE_ENV === 'production') {
+    require('./registerServiceWorker')
+  }
   Vue.component("Layout", DefaultLayout);
   head.link.push({
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/icon?family=Material+Icons",
   });
+  // head.script.push({
+  //   src: 'https://cdn.tailwindcss.com'
+  // })
   head.link.push({
     rel: "stylesheet",
     href:

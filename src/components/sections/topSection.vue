@@ -21,27 +21,27 @@
       <div id="right-side" class="lg:justify-self-start">
         <h1
           id="heading"
-          class="font-bold text-6xl md:text-7xl lg:text-9xl text-primary-text-color capitalize"
+          class="m-0 font-bold text-6xl md:text-7xl lg:text-8xl text-primary-text-color capitalize"
         >
           Hello
         </h1>
         <h1
           id="subHeading"
-          class="font-normal lg:text-6xl md:text-7xl text-2xl text-accent-light capitalize"
+          class="m-0 font-normal lg:text-6xl md:text-7xl text-2xl text-accent-light capitalize"
         >
           I'm Buddha
         </h1>
         <div class="card-section mt-5">
-          <div class="TypeCard w-72 h-44 p-4">
+          <div class="TypeCard h-32 w-60 p-4 m-3">
             <div class="text-white">
-              <span id="typeText"></span>
+              <span id="typeText" class="self-center"></span>
             </div>
           </div>
         </div>
         <div class="card-section lg:ml-24 mt-4">
-          <div class="TypeCard w-72 h-56 p-4">
+          <div class="TypeCard w-60 h-32 p-4 m-3">
             <div class="text-white">
-              <span id="typeText-2"></span>
+              <span id="typeText-2" ></span>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default {
     firstType() {
       new Typed("#typeText", {
         strings: [
-          `<code>
+          `<code class="text-center">
         <span class="code_comment text-gray-500 font-normal">//Introduction of myself</span>
           <br />
           <span class="name_selector text-accent-code">Name</span>
@@ -89,7 +89,7 @@ export default {
     secondType() {
       new Typed("#typeText-2", {
         strings: [
-          `<code>
+          `<code  class="text-center">
           <span class="name_selector capitalize text-accent-code">What i use</span>
           <span class="code_brace text-white">{</span>
           <br />
@@ -125,10 +125,6 @@ export default {
       gsap
         .timeline()
         .from("#img", {
-          // scrollTrigger: {
-          //   trigger: "#img",
-          //   toggleActions: "restart pause resume pause",
-          // },
           x: -200,
           opacity: 0,
           duration: 1.5,

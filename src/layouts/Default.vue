@@ -2,7 +2,7 @@
   <div>
     <NavBar />
     <transition name="fade" appear>
-      <div class="bg-primary-dark pt-20" style="font-family: 'Barlow', sans-serif">
+      <div class="bg-primary-dark pt-20">
         <slot />
       </div>
     </transition>
@@ -19,18 +19,16 @@ export default {
   },
 };
 </script>
-<style src="../main.css"/>
-<style scoped>
-* {
-  overflow-x: hidden;
-}
+<style src="../main.css" />
+
+<style>
 body,
 html {
   font-family: "Barlow", sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
+  margin: 0 !important;
+  padding: 0 !important;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .fade-enter-active {
