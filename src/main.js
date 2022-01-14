@@ -15,7 +15,10 @@ export default function (Vue, { router, head, isClient }) {
     href: "https://fonts.googleapis.com/icon?family=Material+Icons",
   });
   // head.script.push({
-  //   src: 'https://cdn.tailwindcss.com'
+  //   src: 'http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'
+  // })
+  // head.script.push({
+  //   src: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js'
   // })
   head.link.push({
     rel: "stylesheet",
